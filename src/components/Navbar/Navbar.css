@@ -1,0 +1,371 @@
+/* ================================
+   GLOBAL RESET
+================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: #070b18;
+  color: white;
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
+
+.navbar {
+  width: 100%;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 55px;
+
+  background: rgba(8, 15, 35, 0.88);
+
+  border-bottom: 1px solid rgba(0, 212, 255, 0.18);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(0, 212, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: white;
+
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+
+/* Logo Icon */
+
+.logo::before {
+  content: "🎓";
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+
+  background: linear-gradient(
+    135deg,
+    #00d9ff,
+    #0066ff
+  );
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 0 15px rgba(0, 217, 255, 0.5),
+    0 0 30px rgba(0, 102, 255, 0.25);
+
+  transition: 0.4s ease;
+}
+
+
+/* Logo Text Gradient */
+
+.logo {
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #00d9ff,
+    #7c4dff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Logo Hover */
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logo:hover::before {
+  transform: rotate(-8deg) scale(1.08);
+
+  box-shadow:
+    0 0 20px rgba(0, 217, 255, 0.8),
+    0 0 40px rgba(0, 102, 255, 0.4);
+}
+
+
+/* ================================
+   NAVIGATION LINKS
+================================ */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  list-style: none;
+}
+
+
+/* Individual Link */
+
+.nav-links li a {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  color: #d8e7ff;
+
+  text-decoration: none;
+
+  padding: 11px 18px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  border-radius: 12px;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+
+  overflow: hidden;
+}
+
+
+/* ================================
+   LINK HOVER BACKGROUND
+================================ */
+
+.nav-links li a::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #00d9ff,
+    #7c4dff
+  );
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+
+.nav-links li a:hover {
+  color: #ffffff;
+
+  background: rgba(0, 217, 255, 0.08);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 20px rgba(0, 217, 255, 0.08);
+}
+
+
+.nav-links li a:hover::before {
+  width: 70%;
+}
+
+
+/* ================================
+   ACTIVE LINK
+================================ */
+
+.nav-links li a.active {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.16),
+    rgba(124, 77, 255, 0.14)
+  );
+
+  border: 1px solid rgba(0, 217, 255, 0.18);
+
+  box-shadow:
+    0 0 15px rgba(0, 217, 255, 0.08);
+}
+
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+
+.nav-links li:last-child a {
+  margin-left: 8px;
+
+  padding: 10px 22px;
+
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #007bff,
+    #6c35ff
+  );
+
+  border: none;
+
+  border-radius: 25px;
+
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 20px rgba(0, 123, 255, 0.25);
+
+  transition: 0.3s ease;
+}
+
+
+.nav-links li:last-child a::before {
+  display: none;
+}
+
+
+.nav-links li:last-child a:hover {
+  transform: translateY(-3px) scale(1.03);
+
+  background: linear-gradient(
+    135deg,
+    #00c6ff,
+    #7c4dff
+  );
+
+  box-shadow:
+    0 8px 30px rgba(0, 198, 255, 0.35);
+}
+
+
+/* ================================
+   NAVBAR GLOW LINE
+================================ */
+
+.navbar::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1px;
+
+  width: 100%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00d9ff,
+    #7c4dff,
+    transparent
+  );
+
+  opacity: 0.7;
+}
+
+
+/* ================================
+   MOBILE DESIGN
+================================ */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 3px;
+  }
+
+  .nav-links li a {
+    padding: 9px 10px;
+    font-size: 13px;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .logo::before {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+  .navbar {
+    height: auto;
+
+    padding: 15px 20px;
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+  }
+
+  .nav-links li:last-child a {
+    margin-left: 0;
+  }
+}
